@@ -18,10 +18,8 @@ import "./tasks"
 import { HardhatUserConfig } from "hardhat/types"
 import { removeConsoleLog } from "hardhat-preprocessor"
 
-const accounts = {
-  mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
-  // accountsBalance: "990000000000000000000",
-}
+const privateKey = process.env.DEV_PRIVATE_KEY;
+const accounts = [`${privateKey}`]
 
 const config: HardhatUserConfig = {
   abiExporter: {
@@ -53,6 +51,18 @@ const config: HardhatUserConfig = {
       default: 1,
       // dev address mainnet
       // 1: "",
+    },
+    trader: {
+      default: 2,
+    },
+    user: {
+      default: 3,
+    },
+    tester: {
+      default: 4,
+    },
+    hacker: {
+      default: 5,
     },
   },
   networks: {
@@ -281,6 +291,15 @@ const config: HardhatUserConfig = {
     compilers: [
       {
         version: "0.6.12",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
+      },
+      {
+        version: "0.8.5",
         settings: {
           optimizer: {
             enabled: true,
