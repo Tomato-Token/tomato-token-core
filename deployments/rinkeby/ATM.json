@@ -1,0 +1,254 @@
+{
+  "address": "0xcFe8EB513399ffF2ad81415eD88B28AF5A977E6d",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_wallets",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_shares",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "wallet",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Withdraw",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DENOMINATOR",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "depositTotal",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "shares",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdrawTotal",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "withdrawn",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x9dd10d2c532a79f8321e897f7c8b1be1f6e353635b768557bbea3ce0e332bf7c",
+  "receipt": {
+    "to": null,
+    "from": "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97",
+    "contractAddress": "0xcFe8EB513399ffF2ad81415eD88B28AF5A977E6d",
+    "transactionIndex": 1,
+    "gasUsed": "370345",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x4e29134c32986d6db54dd256a10544e2d8b388d4f103b9d22aad805a617bb79b",
+    "transactionHash": "0x9dd10d2c532a79f8321e897f7c8b1be1f6e353635b768557bbea3ce0e332bf7c",
+    "logs": [],
+    "blockNumber": 8806109,
+    "cumulativeGasUsed": "588401",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x5E3385D843CF0cB37ED67486CEF700De98a547f7",
+    [
+      "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97",
+      "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97",
+      "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97",
+      "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97",
+      "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97",
+      "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97",
+      "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97",
+      "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97",
+      "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97",
+      "0x1bE4fad4233b19Ae5E66BA514B0F29ea1D690A97"
+    ],
+    [
+      3000,
+      330,
+      170,
+      170,
+      330,
+      1500,
+      1500,
+      1500,
+      750,
+      750
+    ]
+  ],
+  "solcInputHash": "05a91cc21f24b3c67ca3569bce53de14",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.5+commit.a4f2e591\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_token\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"_wallets\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"_shares\",\"type\":\"uint256[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"wallet\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdraw\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DENOMINATOR\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"depositTotal\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"shares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdrawTotal\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"withdrawn\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/ATM.sol\":\"ATM\"},\"evmVersion\":\"berlin\",\"libraries\":{\":__CACHE_BREAKER__\":\"0x00000000d41867734bbee4c6863d9255b2b06ac1\"},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/ATM.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.5;\\n\\ninterface IERC20 {\\n    function balanceOf(address account) external view returns (uint256);\\n    function transfer(address recipient, uint256 amount) external returns (bool);\\n}\\n\\ncontract ATM {\\n    uint256 public constant DENOMINATOR = 100000;\\n    IERC20 public immutable token;\\n\\n    uint256 public depositTotal;\\n    uint256 public withdrawTotal;\\n\\n    mapping(address => uint256) public shares;\\n    mapping(address => uint256) public withdrawn;\\n\\n    modifier updateDeposits {\\n        depositTotal += (token.balanceOf(address(this)) + withdrawTotal - depositTotal);\\n        _;\\n    }\\n\\n    event Withdraw(address wallet, uint256 amount);\\n\\n    constructor(IERC20 _token, address[] memory _wallets, uint256[] memory _shares) public {\\n        require(_wallets.length == _shares.length, \\\"ATM: corrupt data\\\");\\n\\n        token = _token;\\n\\n        for (uint256 i = 0; i < _wallets.length; i++) {\\n            shares[_wallets[i]] = _shares[i];\\n        }\\n    }\\n\\n    function withdraw() external updateDeposits {\\n        require(shares[msg.sender] > 0, \\\"ATM: no shares\\\");\\n\\n        uint256 totalWithdraw = depositTotal * shares[msg.sender] / DENOMINATOR;\\n        uint256 availableWithdraw = totalWithdraw - withdrawn[msg.sender];\\n\\n        withdrawn[msg.sender] += availableWithdraw;\\n        withdrawTotal += availableWithdraw;\\n\\n        emit Withdraw(msg.sender, availableWithdraw);\\n\\n        token.transfer(msg.sender, availableWithdraw);\\n    }\\n}\\n\",\"keccak256\":\"0xda0266060b64ee58cf085c951c9cbc2e4834a6590e1fc040bd140954ae2a6f4e\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60a060405234801561001057600080fd5b5060405161082b38038061082b83398101604081905261002f91610180565b80518251146100785760405162461bcd60e51b815260206004820152601160248201527041544d3a20636f7272757074206461746160781b604482015260640160405180910390fd5b6001600160601b0319606084901b1660805260005b8251811015610105578181815181106100a8576100a86102db565b6020026020010151600260008584815181106100c6576100c66102db565b60200260200101516001600160a01b03166001600160a01b031681526020019081526020016000208190555080806100fd906102b2565b91505061008d565b5050505061031f565b600082601f83011261011f57600080fd5b8151602061013461012f8361028f565b61025f565b80838252828201915082860187848660051b890101111561015457600080fd5b60005b8581101561017357815184529284019290840190600101610157565b5090979650505050505050565b60008060006060848603121561019557600080fd5b83516101a081610307565b602085810151919450906001600160401b03808211156101bf57600080fd5b818701915087601f8301126101d357600080fd5b81516101e161012f8261028f565b8082825285820191508585018b878560051b880101111561020157600080fd5b600095505b8386101561022d57805161021981610307565b835260019590950194918601918601610206565b5060408a0151909750945050508083111561024757600080fd5b50506102558682870161010e565b9150509250925092565b604051601f8201601f191681016001600160401b0381118282101715610287576102876102f1565b604052919050565b60006001600160401b038211156102a8576102a86102f1565b5060051b60200190565b60006000198214156102d457634e487b7160e01b600052601160045260246000fd5b5060010190565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052604160045260246000fd5b6001600160a01b038116811461031c57600080fd5b50565b60805160601c6104e061034b6000396000818161010001528181610155015261033001526104e06000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c80636ef610921161005b5780636ef61092146100b1578063918f8674146100d1578063ce7c2ac2146100db578063fc0c546a146100fb57600080fd5b806318e06e82146100825780633ccfd60b1461009e5780634adae0da146100a8575b600080fd5b61008b60015481565b6040519081526020015b60405180910390f35b6100a661013a565b005b61008b60005481565b61008b6100bf3660046103b9565b60036020526000908152604090205481565b61008b620186a081565b61008b6100e93660046103b9565b60026020526000908152604090205481565b6101227f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b039091168152602001610095565b6000546001546040516370a0823160e01b81523060048201527f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316906370a082319060240160206040518083038186803b15801561019f57600080fd5b505afa1580156101b3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101d7919061040b565b6101e19190610424565b6101eb919061047d565b6000808282546101fb9190610424565b9091555050336000908152600260205260409020546102515760405162461bcd60e51b815260206004820152600e60248201526d41544d3a206e6f2073686172657360901b604482015260640160405180910390fd5b336000908152600260205260408120548154620186a0916102719161045e565b61027b919061043c565b3360009081526003602052604081205491925090610299908361047d565b336000908152600360205260408120805492935083929091906102bd908490610424565b9250508190555080600160008282546102d69190610424565b909155505060408051338152602081018390527f884edad9ce6fa2440d8a54cc123490eb96d2768479d49ff9c7366125a9424364910160405180910390a160405163a9059cbb60e01b8152336004820152602481018290527f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03169063a9059cbb90604401602060405180830381600087803b15801561037c57600080fd5b505af1158015610390573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103b491906103e9565b505050565b6000602082840312156103cb57600080fd5b81356001600160a01b03811681146103e257600080fd5b9392505050565b6000602082840312156103fb57600080fd5b815180151581146103e257600080fd5b60006020828403121561041d57600080fd5b5051919050565b6000821982111561043757610437610494565b500190565b60008261045957634e487b7160e01b600052601260045260246000fd5b500490565b600081600019048311821515161561047857610478610494565b500290565b60008282101561048f5761048f610494565b500390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220d216526b3868aa4f39d3e6be5c2dd01da83dc648e4df38a5374ddb2440010d1764736f6c63430008050033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c80636ef610921161005b5780636ef61092146100b1578063918f8674146100d1578063ce7c2ac2146100db578063fc0c546a146100fb57600080fd5b806318e06e82146100825780633ccfd60b1461009e5780634adae0da146100a8575b600080fd5b61008b60015481565b6040519081526020015b60405180910390f35b6100a661013a565b005b61008b60005481565b61008b6100bf3660046103b9565b60036020526000908152604090205481565b61008b620186a081565b61008b6100e93660046103b9565b60026020526000908152604090205481565b6101227f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b039091168152602001610095565b6000546001546040516370a0823160e01b81523060048201527f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316906370a082319060240160206040518083038186803b15801561019f57600080fd5b505afa1580156101b3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101d7919061040b565b6101e19190610424565b6101eb919061047d565b6000808282546101fb9190610424565b9091555050336000908152600260205260409020546102515760405162461bcd60e51b815260206004820152600e60248201526d41544d3a206e6f2073686172657360901b604482015260640160405180910390fd5b336000908152600260205260408120548154620186a0916102719161045e565b61027b919061043c565b3360009081526003602052604081205491925090610299908361047d565b336000908152600360205260408120805492935083929091906102bd908490610424565b9250508190555080600160008282546102d69190610424565b909155505060408051338152602081018390527f884edad9ce6fa2440d8a54cc123490eb96d2768479d49ff9c7366125a9424364910160405180910390a160405163a9059cbb60e01b8152336004820152602481018290527f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03169063a9059cbb90604401602060405180830381600087803b15801561037c57600080fd5b505af1158015610390573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103b491906103e9565b505050565b6000602082840312156103cb57600080fd5b81356001600160a01b03811681146103e257600080fd5b9392505050565b6000602082840312156103fb57600080fd5b815180151581146103e257600080fd5b60006020828403121561041d57600080fd5b5051919050565b6000821982111561043757610437610494565b500190565b60008261045957634e487b7160e01b600052601260045260246000fd5b500490565b600081600019048311821515161561047857610478610494565b500290565b60008282101561048f5761048f610494565b500390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220d216526b3868aa4f39d3e6be5c2dd01da83dc648e4df38a5374ddb2440010d1764736f6c63430008050033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 26,
+        "contract": "contracts/ATM.sol:ATM",
+        "label": "depositTotal",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 28,
+        "contract": "contracts/ATM.sol:ATM",
+        "label": "withdrawTotal",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 32,
+        "contract": "contracts/ATM.sol:ATM",
+        "label": "shares",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 36,
+        "contract": "contracts/ATM.sol:ATM",
+        "label": "withdrawn",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_uint256)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
