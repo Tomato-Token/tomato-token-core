@@ -12,16 +12,16 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
   const tomato = await ethers.getContract("TomatoToken")
 
   const wallets = [
-    deployer,
-    deployer,
-    deployer,
-    deployer,
-    deployer,
-    deployer,
-    deployer,
-    deployer,
-    deployer,
-    deployer,
+    process.env.TEAM1,
+    process.env.TEAM2,
+    process.env.TEAM3,
+    process.env.TEAM4,
+    process.env.TEAM5,
+    process.env.TEAM6,
+    process.env.TEAM7,
+    process.env.TEAM8,
+    process.env.TEAM9,
+    process.env.TEAM10
   ];
 
   const shares = [
@@ -37,7 +37,7 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
     750
   ];
 
-  await deploy("ATM", {
+  await deploy("Atm", {
     from: deployer,
     log: true,
     args: [
@@ -48,12 +48,16 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
     deterministicDeployment: false
   })
 
-  const atm = await ethers.getContract("ATM")
+  const atm = await ethers.getContract("Atm");
 
-
-  const tomatoPerBlock = "10000" + "00000000000000000";
-  const startBlock = "8806158";
-  const bonusEndBlock = "123876342";
+  const tomatoPerBlock = ethers.utils.parseUnits('1100000', 18);
+  let startBlock;
+  if (network.name == "rinkeby") {
+    startBlock = "8811374";
+  } else {
+    startBlock = "12687703";
+  }
+  const bonusEndBlock = "1";
 
   await deploy("MasterChef", {
     from: deployer,
@@ -69,6 +73,18 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
   })
 
   const masterChef = await ethers.getContract("MasterChef")
+  const totalSupply = ethers.utils.parseUnits('46000000000000', 18);
+
+  if (await tomato.balanceOf(masterChef.address) != totalSupply) {
+    // Transfer Sushi Ownership to Chef
+    await execute(
+      'TomatoToken',
+      {from: deployer, log: true},
+      'mint',
+      masterChef.address,
+      totalSupply
+    );
+  }
 
   if (await tomato.owner() !== masterChef.address) {
     // Transfer Sushi Ownership to Chef

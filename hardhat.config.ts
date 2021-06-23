@@ -81,6 +81,7 @@ const config: HardhatUserConfig = {
       forking: {
         enabled: process.env.FORKING === "true",
         url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
+        blockNumber: 12687000
       },
       live: false,
       saveDeployments: true,
@@ -299,7 +300,7 @@ const config: HardhatUserConfig = {
         },
       },
       {
-        version: "0.8.5",
+        version: "0.8.6",
         settings: {
           optimizer: {
             enabled: true,

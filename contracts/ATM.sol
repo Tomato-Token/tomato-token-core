@@ -1,14 +1,14 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.5;
+pragma solidity 0.8.6;
 
 interface IERC20 {
     function balanceOf(address account) external view returns (uint256);
     function transfer(address recipient, uint256 amount) external returns (bool);
 }
 
-contract ATM {
-    uint256 public constant DENOMINATOR = 100000;
+contract Atm {
+    uint256 public constant SHARE_DENOMINATOR = 100000;
     IERC20 public immutable token;
 
     uint256 public depositTotal;
@@ -34,15 +34,20 @@ contract ATM {
         }
     }
 
-    function isCustomer(address wallet) public returns (bool) {
-        return shares[wallet] > 0;
+    function currentDepositTotal() public view returns (uint256 _depositTotal) {
+        uint256 _depositTotal = depositTotal;
+        _depositTotal += (token.balanceOf(address(this)) + withdrawTotal - depositTotal);
+    }
+
+    function available(address wallet) public view returns (uint256) {
+        uint256 totalWithdraw = currentDepositTotal() * shares[wallet] / SHARE_DENOMINATOR;
+        return totalWithdraw - withdrawn[wallet];
     }
 
     function withdraw() external updateDeposits {
-        require(isCustomer(msg.sender), "ATM: no shares");
+        require(shares[msg.sender] > 0, "ATM: no shares");
 
-        uint256 totalWithdraw = depositTotal * shares[msg.sender] / DENOMINATOR;
-        uint256 availableWithdraw = totalWithdraw - withdrawn[msg.sender];
+        uint256 availableWithdraw = available(msg.sender);
 
         withdrawn[msg.sender] += availableWithdraw;
         withdrawTotal += availableWithdraw;
