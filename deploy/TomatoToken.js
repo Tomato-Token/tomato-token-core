@@ -55,7 +55,7 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
   if (network.name == "rinkeby") {
     startBlock = "8811374";
   } else {
-    startBlock = "12687703";
+    startBlock = "12697750";
   }
   const bonusEndBlock = "1";
 
@@ -75,8 +75,8 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
   const masterChef = await ethers.getContract("MasterChef")
   const totalSupply = ethers.utils.parseUnits('46000000000000', 18);
 
-  if (await tomato.balanceOf(masterChef.address) != totalSupply) {
-    // Transfer Sushi Ownership to Chef
+  if (await tomato.balanceOf(masterChef.address) != totalSupply.toString()) {
+    console.log('Mint Tomato to Chef')
     await execute(
       'TomatoToken',
       {from: deployer, log: true},
@@ -87,22 +87,12 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
   }
 
   if (await tomato.owner() !== masterChef.address) {
-    // Transfer Sushi Ownership to Chef
+    console.log('Transfer Tomato Ownership to Chef')
     await execute(
       'TomatoToken',
       {from: deployer, log: true},
       'transferOwnership',
       masterChef.address
-    );
-  }
-
-  if (await masterChef.owner() !== deployer) {
-    // Transfer ownership of MasterChef to dev
-    await execute(
-      'MasterChef',
-      {from: deployer, log: true},
-      'transferOwnership',
-      deployer
     );
   }
 }
