@@ -1,5 +1,5 @@
 module.exports = async function ({ ethers, deployments, getNamedAccounts, network }) {
-  const { deploy, execute } = deployments
+  const { deploy, execute, read } = deployments
 
   const { deployer } = await getNamedAccounts()
 
@@ -91,10 +91,12 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts, networ
     ]
   }
 
-  for (var i = 0; i < pool1.length; i++) {
+  const poolLength = await read('MasterChef', 'poolLength');
+
+  for (var i = poolLength; i < pool1.length; i++) {
     await execute(
       'MasterChef',
-      {from: deployer, log: true},
+      {from: deployer, log: true, gasLimit: 600000},
       'add',
       pool1[i].allocPoint,
       pool1[i].lpToken,
