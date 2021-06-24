@@ -8,7 +8,7 @@ interface IERC20 {
 }
 
 contract Atm {
-    uint256 public constant SHARE_DENOMINATOR = 100000;
+    uint256 public constant SHARE_DENOMINATOR = 10000;
     IERC20 public immutable token;
 
     uint256 public depositTotal;
@@ -24,7 +24,7 @@ contract Atm {
 
     event Withdraw(address wallet, uint256 amount);
 
-    constructor(IERC20 _token, address[] memory _wallets, uint256[] memory _shares) public {
+    constructor(IERC20 _token, address[] memory _wallets, uint256[] memory _shares) {
         require(_wallets.length == _shares.length, "ATM: corrupt data");
 
         token = _token;
@@ -34,9 +34,10 @@ contract Atm {
         }
     }
 
-    function currentDepositTotal() public view returns (uint256 _depositTotal) {
+    function currentDepositTotal() public view returns (uint256) {
         uint256 _depositTotal = depositTotal;
         _depositTotal += (token.balanceOf(address(this)) + withdrawTotal - depositTotal);
+        return _depositTotal;
     }
 
     function available(address wallet) public view returns (uint256) {
