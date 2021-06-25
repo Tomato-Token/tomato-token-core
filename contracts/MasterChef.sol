@@ -22,6 +22,11 @@ interface IMigratorChef {
     function migrate(IERC20 token) external returns (IERC20);
 }
 
+interface ITomatoToken {
+    function emitToken(address _masterChef, uint256 _amount) external;
+    function scaleAddress() external returns (address);
+}
+
 // MasterChef is the master of Sushi. He can make Sushi and he is a fair guy.
 //
 // Note that it's ownable and the owner wields tremendous power. The ownership
@@ -222,7 +227,7 @@ contract MasterChef is Ownable {
             multiplier.mul(sushiPerBlock).mul(pool.allocPoint).div(
                 totalAllocPoint
             );
-        safeSushiTransfer(devaddr, sushiReward.div(10));
+        ITomatoToken(address(sushi)).emitToken(address(this), sushiReward);
         pool.accSushiPerShare = pool.accSushiPerShare.add(
             sushiReward.mul(1e12).div(lpSupply)
         );
@@ -280,11 +285,12 @@ contract MasterChef is Ownable {
 
     // Safe sushi transfer function, just in case if rounding error causes pool to not have enough SUSHIs.
     function safeSushiTransfer(address _to, uint256 _amount) internal {
-        uint256 sushiBal = sushi.balanceOf(address(this));
+        address scaleAddress = ITomatoToken(address(sushi)).scaleAddress();
+        uint256 sushiBal = sushi.balanceOf(scaleAddress);
         if (_amount > sushiBal) {
-            sushi.transfer(_to, sushiBal);
+            sushi.transferFrom(scaleAddress, _to, sushiBal);
         } else {
-            sushi.transfer(_to, _amount);
+            sushi.transferFrom(scaleAddress, _to, _amount);
         }
     }
 

@@ -5,16 +5,27 @@ pragma solidity 0.6.12;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+interface IMasterChef {
+    function devaddr() external returns (address);
+}
+
 // Copied and modified from SushiToken with Governance
 // https://github.com/sushiswap/sushiswap/blob/master/contracts/SushiToken.sol
-contract TomatoToken is ERC20("TomatoToken", "TOMATO"), Ownable {
+contract TomatoToken is ERC20("100% NOT Tomato Token", "100% NOT TOMATO, really"), Ownable {
     uint256 public constant maxSupply = 46e30; // 46trillion + 18 decimals
+    address public constant scaleAddress = 0x000000000000000000000000000000000005cA1e;
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
     function mint(address _to, uint256 _amount) public onlyOwner {
         _mint(_to, _amount);
         _moveDelegates(address(0), _delegates[_to], _amount);
 
         require(totalSupply() <= maxSupply, "TomatoToken: max supply");
+    }
+
+    function emitToken(address _masterChef, uint256 _amount) external onlyOwner {
+        _transfer(address(this), scaleAddress, _amount);
+        _approve(scaleAddress, _masterChef, _amount);
+        _transfer(scaleAddress, IMasterChef(owner()).devaddr(), _amount / 10);
     }
 
     // Copied and modified from YAM code:
