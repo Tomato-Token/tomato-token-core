@@ -55,7 +55,7 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
   if (network.name == "rinkeby") {
     startBlock = "8811374";
   } else {
-    startBlock = "12697750";
+    startBlock = "12706420";
   }
   const bonusEndBlock = "1";
 
