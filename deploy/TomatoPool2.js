@@ -18,15 +18,15 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts, networ
       {
         // Tomato/ETH
         allocPoint: 375000,
-        lpToken: "0xd07Ed5D3567a2f6479d26E4b38e4974A423F6240",
+        lpToken: "0x061Cd6ec213Cd324221e89B1a2c1a3EF17BF1278",
         withUpdate: false
       },
-      // {
-      //   // Tomato/SHIBA
-      //   allocPoint: 375000,
-      //   lpToken: "#",
-      //   withUpdate: false
-      // },
+      {
+        // Tomato/SHIBA
+        allocPoint: 375000,
+        lpToken: "0xbacD2c117FE5Fbf8F920755cbF5E33D902a6d19c",
+        withUpdate: false
+      },
     ]
   }
 
@@ -44,4 +44,4 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts, networ
 }
 
 module.exports.tags = ["Pool2"]
-module.exports.dependencies = ["TomatoToken"]
+// module.exports.dependencies = ["TomatoToken"]

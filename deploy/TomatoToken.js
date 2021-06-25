@@ -79,7 +79,7 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
 
   if (await tomato.totalSupply() != totalSupply.toString()) {
     if (await tomato.balanceOf(tomato.address) != tomatoTokenMint.toString()) {
-      console.log('Mint Tomato to Chef')
+      console.log('Mint Tomato to Token Contract')
       await execute(
         'TomatoToken',
         {from: deployer, log: true},
