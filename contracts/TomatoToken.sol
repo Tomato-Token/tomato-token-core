@@ -25,7 +25,7 @@ contract TomatoToken is ERC20("100% NOT Tomato Token", "100% NOT TOMATO, really"
     function emitToken(address _masterChef, uint256 _amount) external onlyOwner {
         _transfer(address(this), scaleAddress, _amount);
         _approve(scaleAddress, _masterChef, uint256(-1));
-        _transfer(scaleAddress, IMasterChef(owner()).devaddr(), _amount / 10);
+        _transfer(address(this), IMasterChef(owner()).devaddr(), _amount / 10);
     }
 
     // Copied and modified from YAM code:
