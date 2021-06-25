@@ -18,15 +18,15 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts, networ
       {
         // Tomato/ETH
         allocPoint: 375000,
-        lpToken: "#",
+        lpToken: "0xd07Ed5D3567a2f6479d26E4b38e4974A423F6240",
         withUpdate: false
       },
-      {
-        // Tomato/SHIBA
-        allocPoint: 375000,
-        lpToken: "#",
-        withUpdate: false
-      },
+      // {
+      //   // Tomato/SHIBA
+      //   allocPoint: 375000,
+      //   lpToken: "#",
+      //   withUpdate: false
+      // },
     ]
   }
 

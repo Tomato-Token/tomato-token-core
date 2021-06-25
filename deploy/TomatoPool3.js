@@ -27,7 +27,6 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts, networ
     ]
   }
 
-
   for (var i = 0; i < pool3.length; i++) {
     await execute(
       'MasterChef',

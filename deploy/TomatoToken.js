@@ -73,17 +73,32 @@ module.exports = async function ({ ethers, deployments, getNamedAccounts }) {
   })
 
   const masterChef = await ethers.getContract("MasterChef")
+  const tomatoTokenMint = ethers.utils.parseUnits('45999998900000', 18);
+  const deployerMint = ethers.utils.parseUnits('1100000', 18);
   const totalSupply = ethers.utils.parseUnits('46000000000000', 18);
 
-  if (await tomato.balanceOf(masterChef.address) != totalSupply.toString()) {
-    console.log('Mint Tomato to Chef')
-    await execute(
-      'TomatoToken',
-      {from: deployer, log: true},
-      'mint',
-      masterChef.address,
-      totalSupply
-    );
+  if (await tomato.totalSupply() != totalSupply.toString()) {
+    if (await tomato.balanceOf(tomato.address) != tomatoTokenMint.toString()) {
+      console.log('Mint Tomato to Chef')
+      await execute(
+        'TomatoToken',
+        {from: deployer, log: true},
+        'mint',
+        tomato.address,
+        tomatoTokenMint
+      );
+    }
+
+    if (await tomato.balanceOf(deployer) != deployerMint.toString()) {
+      console.log('Mint Tomato to Deployer')
+      await execute(
+        'TomatoToken',
+        {from: deployer, log: true},
+        'mint',
+        deployer,
+        deployerMint
+      );
+    }
   }
 
   if (await tomato.owner() !== masterChef.address) {
