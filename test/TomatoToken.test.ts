@@ -49,8 +49,10 @@ describe('TomatoToken', function () {
   });
 
   it('balanceOf()', async function () {
-    const totalSupply = ethers.utils.parseUnits('46000000000000', 18);
-    expect(await tomatoToken.balanceOf(masterChef.address)).to.be.equal(totalSupply)
+    const totalSupply = ethers.utils.parseUnits('45999998900000', 18);
+    expect(await tomatoToken.balanceOf(tomatoToken.address)).to.be.equal(totalSupply)
+    const deployerMint = ethers.utils.parseUnits('1100000', 18);
+    expect(await tomatoToken.balanceOf(deployer)).to.be.equal(deployerMint)
   });
 
   it('has pool1', async function () {
